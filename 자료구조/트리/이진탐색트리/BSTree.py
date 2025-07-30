@@ -98,8 +98,8 @@ class BSTree:
         root = _balancing(0, len(nodes)-1)
 
 # 테스트 코드
-bst = BSTree()
-for x in (6, 4, 9, 2, 5, 7, 8):
-    bst.insert(x)
+# bst = BSTree()
+# for x in (6, 4, 9, 2, 5, 7, 8):
+#     bst.insert(x)
 
-print(f"Inorder traversal: {bst.inorder()}")
+# print(f"Inorder traversal: {bst.inorder()}")
