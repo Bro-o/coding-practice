@@ -1,3 +1,6 @@
+"""
+최소 경유지이다. 최단 시간은 아님. 최단시간 경로를 구하려면 다익스트라 알고리즘을 사용해야함.
+"""
 graph = {
     "A": [("B", 1), ("C", 4), ("D", 5)],
     "B": [("A", 1), ("D", 2)],
@@ -18,7 +21,7 @@ def bfs(graph, node):
         u = q.pop(0)
         res.append(u)
 
-        for v in graph[u]:
+        for v, w in graph[u]:
             if v not in visited:
                 node_from[v] = u
                 visited.add(v)
