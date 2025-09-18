@@ -10,6 +10,11 @@ for _ in range (n):
     start, end = map(int, input().split())
     meeting_list.append((start, end))
 
+# 내 풀이
+"""
+불필요한 비교,조건이 더 많이 들어감
+"""
+
 meeting_list.sort(key = lambda x: (x[0], x[1]))
 
 tmp = (0, 0)
@@ -25,3 +30,21 @@ for s, e in meeting_list:
         tmp = (s, e)
 
 print(res)
+
+# 간결
+"""
+끝나는 시간 정렬 후, 가능한 회의 차례로 선택
+"""
+
+meeting_list.sort(key = lambda x: (x[1], x[0]))
+
+count = 0
+last_end = -1
+
+for s, e in meeting_list:
+    if s >= last_end:
+        count += 1
+        last_end = e
+
+print(count)
+
